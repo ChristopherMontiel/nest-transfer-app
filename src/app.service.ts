@@ -5,4 +5,14 @@ export class AppService {
   getHello(): string {
     return 'Hello World!';
   }
+
+  getUsers(): string[] {
+    return[
+      'Chris',
+      'Asu',
+      'Elena',
+      'Javo',
+      'Pepa'
+    ]
+  }
 }

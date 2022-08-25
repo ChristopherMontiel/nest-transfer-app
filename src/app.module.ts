@@ -7,7 +7,9 @@ import { TransferenciasModule } from './transferencias/transferencias.module';
 
 @Module({
   //imports: [MongooseModule.forRoot('mongodb://localhost/nest')],
-  imports: [MongooseModule.forRoot('mongodb://mongo:w5b8Ta2Y5KtM6W0iEA0o@containers-us-west-18.railway.app:6613'), DestinatariosModule, TransferenciasModule],
+  imports: [MongooseModule.forRoot('mongodb://mongo:w5b8Ta2Y5KtM6W0iEA0o@containers-us-west-18.railway.app:6613'),
+  DestinatariosModule,
+  TransferenciasModule],
   controllers: [AppController],
   providers: [AppService],
 })

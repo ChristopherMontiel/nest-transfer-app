@@ -1,15 +1,28 @@
 import { Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
 import { CreateDestinatarioDto } from './dto/create-destinatario.dto';
 import { UpdateDestinatarioDto } from './dto/update-destinatario.dto';
+import { destinatarios, destinatariosDocument } from './schema/destinatarios.schema';
+import { Model } from 'mongoose';
 
 @Injectable()
 export class DestinatariosService {
-  create(createDestinatarioDto: CreateDestinatarioDto) {
-    return 'This action adds a new destinatario';
+  
+  constructor(
+    @InjectModel(destinatarios.name) private destinatariosModule: Model<destinatariosDocument>,
+  ) {}
+  
+  async create(createDestinatarioDto: CreateDestinatarioDto) {
+
+    const destinatarioCreated = await this.destinatariosModule.create(createDestinatarioDto)
+
+    return destinatarioCreated;
   }
 
-  findAll() {
-    return `This action returns all destinatarios`;
+  async findAll() {
+    const list = await this.destinatariosModule.find({})
+
+    return list;
   }
 
   findOne(id: number) {

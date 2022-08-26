@@ -10,7 +10,10 @@ export class destinatarios {
   nombre: string;
 
   @Prop()
-  rut: string;
+  rutNumber: number;
+
+  @Prop()
+  rutDv: string;
 
   @Prop()
   mail: string;
@@ -25,7 +28,7 @@ export class destinatarios {
   tipoCuenta: string;
   
   @Prop()
-  nCuenta: string;
+  nCuenta: number;
 }
 
 export const destinatariosSchema = SchemaFactory.createForClass(destinatarios);

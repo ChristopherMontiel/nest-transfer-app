@@ -19,7 +19,7 @@ export class DestinatariosController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.destinatariosService.findOne(+id);
+    return this.destinatariosService.findOne(id);
   }
 
   @Patch(':id')
@@ -29,6 +29,6 @@ export class DestinatariosController {
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.destinatariosService.remove(+id);
+    return this.destinatariosService.remove(id);
   }
 }

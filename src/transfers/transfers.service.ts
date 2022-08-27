@@ -1,11 +1,23 @@
 import { Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
 import { CreateTransferDto } from './dto/create-transfer.dto';
 import { UpdateTransferDto } from './dto/update-transfer.dto';
+import { transfers, transfersDocument } from './schema/transfers.schema';
+import { Model } from 'mongoose';
 
 @Injectable()
 export class TransfersService {
-  create(createTransferDto: CreateTransferDto) {
-    return 'This action adds a new transfer';
+
+  constructor(
+    @InjectModel(transfers.name) 
+    private transfersModule: Model<transfersDocument>,
+  ) {}
+
+  async create(createTransferDto: CreateTransferDto) {
+
+    const transferCreated = await this.transfersModule.create(createTransferDto);
+    
+    return transferCreated;
   }
 
   findAll() {

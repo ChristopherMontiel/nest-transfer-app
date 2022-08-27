@@ -1,9 +1,9 @@
-import { IsAlphanumeric, IsEmail, IsIdentityCard, IsNotEmpty, IsNumber, IsPhoneNumber, IsString } from "class-validator";
+import { IsAlphanumeric, IsEmail, IsNotEmpty, IsNumber, IsPhoneNumber, IsString } from "class-validator";
 
 export class CreateRecipientDto {
   @IsNotEmpty()
   @IsString()
-  nombre: string;
+  name: string;
   
   @IsNotEmpty()
   @IsNumber()
@@ -15,21 +15,21 @@ export class CreateRecipientDto {
 
   @IsNotEmpty()
   @IsEmail()
-  correo: string;
+  mail: string;
 
   @IsNotEmpty()
   @IsPhoneNumber()
-  telefono: string;
+  phone: string;
 
   @IsNotEmpty()
   @IsString()
-  banco: string;
+  bank: string;
 
   @IsNotEmpty()
   @IsString()
-  tipoCuenta: string;
+  accType: string;
 
   @IsNotEmpty()
   @IsNumber()
-  nCuenta: number;
+  accNumber: number;
 }

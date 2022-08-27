@@ -4,10 +4,24 @@ import { Document } from 'mongoose';
 
 export type recipientsDocument = recipients & Document;
 
+/* Ejemplo: 
+  recipient:
+  {
+    "name": "Christopher Montiel",
+    "rutNumber": 123451222,
+    "rutDv": "K",
+    "mail": "chris@elmaldito.com",
+    "phone": "+56988227732",
+    "bank": "banco frontend",
+    "accType": "oculta",
+    "accNumber": 99988877
+  }
+  */
+
 @Schema()
 export class recipients {
   @Prop()
-  nombre: string;
+  name: string;
 
   @Prop()
   rutNumber: number;
@@ -19,16 +33,16 @@ export class recipients {
   mail: string;
 
   @Prop()
-  telefono: string;
+  phone: string;
 
   @Prop()
-  banco: string;
+  bank: string;
 
   @Prop()
-  tipoCuenta: string;
+  accType: string;
   
   @Prop()
-  nCuenta: number;
+  accNumber: number;
 }
 
 export const recipientsSchema = SchemaFactory.createForClass(recipients);

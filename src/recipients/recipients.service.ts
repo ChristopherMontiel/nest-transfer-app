@@ -9,7 +9,8 @@ import { Model } from 'mongoose';
 export class RecipientsService {
   
   constructor(
-    @InjectModel(recipients.name) private recipientsModule: Model<recipientsDocument>,
+    @InjectModel(recipients.name) 
+    private recipientsModule: Model<recipientsDocument>,
   ) {}
   
   async create(createRecipientDto: CreateRecipientDto) {

@@ -29,6 +29,6 @@ export class TransfersController {
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.transfersService.remove(+id);
+    return this.transfersService.remove(id);
   }
 }

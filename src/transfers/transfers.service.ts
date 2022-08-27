@@ -34,7 +34,9 @@ export class TransfersService {
     return `This action updates a #${id} transfer`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} transfer`;
+  async remove(id: string) {
+    const deletedTransfer = await this.transfersModule.findByIdAndRemove({ _id: id })
+    return deletedTransfer;
+    //return `This action removes a #${id} transfer`;
   }
 }

@@ -8,10 +8,10 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
   .setTitle('Transfer-APP API documentation')
-  .setDescription('API para mi sitio de transferencias')
+  .setDescription('API para mi sitio de transfers')
   .setVersion('1.0')
-  .addTag('destinatarios')
-  .addTag('transferencias')
+  .addTag('recipients')
+  .addTag('transfers')
   .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('documentation', app, document);

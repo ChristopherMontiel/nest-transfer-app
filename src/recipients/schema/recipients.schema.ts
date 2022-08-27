@@ -2,10 +2,10 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
-export type destinatariosDocument = destinatarios & Document;
+export type recipientsDocument = recipients & Document;
 
 @Schema()
-export class destinatarios {
+export class recipients {
   @Prop()
   nombre: string;
 
@@ -31,4 +31,4 @@ export class destinatarios {
   nCuenta: number;
 }
 
-export const destinatariosSchema = SchemaFactory.createForClass(destinatarios);
+export const recipientsSchema = SchemaFactory.createForClass(recipients);

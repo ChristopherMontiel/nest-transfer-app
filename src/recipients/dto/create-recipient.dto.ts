@@ -1,6 +1,6 @@
 import { IsAlphanumeric, IsEmail, IsIdentityCard, IsNotEmpty, IsNumber, IsPhoneNumber, IsString } from "class-validator";
 
-export class CreateDestinatarioDto {
+export class CreateRecipientDto {
   @IsNotEmpty()
   @IsString()
   nombre: string;

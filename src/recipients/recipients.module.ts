@@ -1,7 +1,6 @@
 import { Module } from '@nestjs/common';
 import { RecipientsService } from './recipients.service';
 import { RecipientsController } from './recipients.controller';
-import { Mongoose } from 'mongoose';
 import { MongooseModule } from '@nestjs/mongoose';
 import { recipients, recipientsSchema } from './schema/recipients.schema';
 

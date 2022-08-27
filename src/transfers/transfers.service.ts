@@ -20,8 +20,10 @@ export class TransfersService {
     return transferCreated;
   }
 
-  findAll() {
-    return `This action returns all transfers`;
+  async findAll() {
+    const list = await this.transfersModule.find({});
+    
+    return list;
   }
 
   findOne(id: number) {

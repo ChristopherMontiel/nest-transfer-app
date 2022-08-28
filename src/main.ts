@@ -6,6 +6,8 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  //Se habilita CORS para pruebas en desarrollo.
+  app.enableCors();
   const config = new DocumentBuilder()
   .setTitle('Transfer-APP API documentation')
   .setDescription('API para mi sitio de transfers')
